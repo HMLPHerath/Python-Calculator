@@ -50,6 +50,7 @@ def clickDiv(cal):
     display.insert(END,cal)  
 
 def answer():
+    # Calculation process
 
     expression = display.get()
     try:
@@ -61,6 +62,8 @@ def answer():
         messagebox.showerror('Error', "A Number Can't Devide By Zero....!")
     except SyntaxError:
         messagebox.showerror('Error', "Invalid Calculation")
+    except Exception as e:
+        print('Somthing went wrong', e)
 
 def clear():
     display.delete(0,END)
@@ -142,6 +145,3 @@ bEqal.grid(row=5,column=0,pady=5,columnspan=4)
 
 root.mainloop()
 
-
-if __name__ == "__main__":
-    main()
